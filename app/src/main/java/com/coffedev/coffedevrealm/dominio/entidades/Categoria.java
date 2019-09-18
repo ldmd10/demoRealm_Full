@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 public class Categoria extends RealmObject {
@@ -29,7 +30,7 @@ public class Categoria extends RealmObject {
     private String id;
     @SerializedName("blogs")
     @Expose
-    private List<Object> blogs = null;
+    private RealmList<Blog> blogs = null;
 
     public String getName() {
         return name;
@@ -79,11 +80,11 @@ public class Categoria extends RealmObject {
         this.id = id;
     }
 
-    public List<Object> getBlogs() {
+    public RealmList<Blog> getBlogs() {
         return blogs;
     }
 
-    public void setBlogs(List<Object> blogs) {
+    public void setBlogs(RealmList<Blog> blogs) {
         this.blogs = blogs;
     }
 

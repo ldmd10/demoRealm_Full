@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 public class Imagen extends RealmObject {
@@ -36,7 +37,7 @@ public class Imagen extends RealmObject {
     private String provider;
     @SerializedName("related")
     @Expose
-    private List<String> related = null;
+    private RealmList<String> related = null;
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
@@ -114,11 +115,11 @@ public class Imagen extends RealmObject {
         this.provider = provider;
     }
 
-    public List<String> getRelated() {
+    public RealmList<String> getRelated() {
         return related;
     }
 
-    public void setRelated(List<String> related) {
+    public void setRelated(RealmList<String> related) {
         this.related = related;
     }
 
