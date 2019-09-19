@@ -47,9 +47,4 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:3.8.1"
 
 
-    // BindButterknife, para enlazar views
-    implementation 'com.jakewharton:butterknife:10.0.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
-
-
 }

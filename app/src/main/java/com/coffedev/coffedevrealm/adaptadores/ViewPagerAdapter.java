@@ -1,15 +1,17 @@
 package com.coffedev.coffedevrealm.adaptadores;
 
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.coffedev.coffedevrealm.adaptadores.interfaces.ViewPager;
 
 import java.util.LinkedList;
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private LinkedList<Fragment> agrupadorViewPager;
 
@@ -44,4 +46,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         else
             return index;
     }
+
+
 }

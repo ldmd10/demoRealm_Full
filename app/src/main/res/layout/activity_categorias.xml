@@ -17,23 +17,21 @@
             android:layout_height="wrap_content">
 
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/view_pager_categoria"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="?android:colorBackground"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/Tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabGravity="fill"
                 app:tabIndicatorGravity="bottom"
-                app:tabMode="auto"
+                app:tabMode="auto" />
 
-                />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager_categoria"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:colorBackground"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
         </com.google.android.material.appbar.AppBarLayout>

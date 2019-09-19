@@ -12,6 +12,8 @@ import com.coffedev.coffedevrealm.adaptadores.interfaces.TouchHelperAdapter;
 import com.coffedev.coffedevrealm.dominio.entidades.Blog;
 import com.coffedev.coffedevrealm.viewHolders.ViewHolderBlog;
 
+import java.util.LinkedList;
+
 import javax.annotation.Nullable;
 
 import io.realm.OrderedRealmCollection;

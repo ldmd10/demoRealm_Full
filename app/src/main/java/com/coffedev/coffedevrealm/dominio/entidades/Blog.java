@@ -26,6 +26,7 @@ public class Blog extends RealmObject {
     @Expose
     private int v;
     @SerializedName("categoryblog")
+
     @Expose
     private String categoryblog;
     @SerializedName("id")
