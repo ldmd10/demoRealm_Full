@@ -1,20 +1,18 @@
 package com.coffedev.coffedevrealm.actividades;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
 import com.coffedev.coffedevrealm.R;
 import com.coffedev.coffedevrealm.adaptadores.ViewPagerAdapter;
 import com.coffedev.coffedevrealm.configuraciones.RealmAdmin;
-import com.coffedev.coffedevrealm.dominio.dao.CategoriaDao;
 import com.coffedev.coffedevrealm.dominio.entidades.Categoria;
 import com.coffedev.coffedevrealm.fragmentos.BlogsFragment;
 import com.coffedev.coffedevrealm.peticiones.api.RxManager;
@@ -24,12 +22,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.LinkedList;
 import java.util.List;
 
-
 import io.reactivex.observers.DisposableSingleObserver;
-import io.realm.OrderedCollectionChangeSet;
-import io.realm.OrderedRealmCollectionChangeListener;
-import io.realm.Realm;
-import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 
 public class CategoriasActivity extends AppCompatActivity {
@@ -66,7 +59,7 @@ public class CategoriasActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-
+                ((BlogsFragment) agrupadorViewPager.get(position)).update();
 
             }
 
@@ -125,10 +118,10 @@ public class CategoriasActivity extends AppCompatActivity {
             fragmentBlog.setArguments(argComponente);
             fragmentBlog.setCategoria(c);
             agrupadorViewPager.add(fragmentBlog);
-        }
 
+        }
+        adaptadorPager = new ViewPagerAdapter(getSupportFragmentManager(), agrupadorViewPager);
         viewPager.setAdapter(adaptadorPager);
-        tabLayout.setupWithViewPager(viewPager);
 
     }
 

@@ -11,7 +11,7 @@ import com.coffedev.coffedevrealm.adaptadores.interfaces.ViewPager;
 
 import java.util.LinkedList;
 
-public class ViewPagerAdapter extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private LinkedList<Fragment> agrupadorViewPager;
 

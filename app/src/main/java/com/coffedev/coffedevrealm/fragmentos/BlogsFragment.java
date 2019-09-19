@@ -2,6 +2,7 @@ package com.coffedev.coffedevrealm.fragmentos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,7 @@ public class BlogsFragment extends Fragment implements ViewPager {
      * Actualiza los elementos del recyclerView
      */
     public void update() {
+        Log.d("oeoeoe", "update: abriendo " + categoria.getName());
         blogsCategoria = RealmAdmin.BlogDao().getAllBlogsbyCategoria();
 
         AdapterBlogs adapterBlogs = new AdapterBlogs(blogsCategoria, new TouchHelperAdapter() {
