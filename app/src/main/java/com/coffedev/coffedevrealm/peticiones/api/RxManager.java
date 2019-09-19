@@ -15,14 +15,12 @@ import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class RxManager {
-    private Activity observador;
     APIService restCliente;
     private CompositeDisposable disposable = new CompositeDisposable();
 
-    public RxManager(Activity activity) throws Exception {
-        this.observador = activity;
+    public RxManager() throws Exception {
         try {
-            PeticionesUtil.createClienteRX("https://api.cocanasa.org/", activity);
+            restCliente=PeticionesUtil.createClienteRX("https://api.cocanasa.org/");
         } catch (Exception e) {
             Log.d("ErrorRetrofitCliente", "RxManager: " + e.getMessage());
         }
@@ -30,7 +28,6 @@ public class RxManager {
 
     public void obtenerCategoriqas(DisposableSingleObserver<ResponseCategorias> observer) {
 
-        HashMap<String, String> header = new HashMap<>();
 
         Disposable disposable_aux = restCliente.obtenereCategorias().subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).

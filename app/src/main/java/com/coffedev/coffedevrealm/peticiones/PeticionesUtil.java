@@ -17,9 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PeticionesUtil {
 
 
-    public static APIService createClienteRX(String url, Activity activity) throws Exception {
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+    public static APIService createClienteRX(String url) throws Exception {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
