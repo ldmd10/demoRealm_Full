@@ -3,29 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardBlog"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="75dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="2dp"
     android:checkable="true"
     android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical"
-    app:cardCornerRadius="0dp">
+    android:padding="20dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="1dp">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tituloBlog"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center_vertical"
-        />
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/descripcionBlog"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
-        android:gravity="center_vertical"
-       />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tituloBlog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/cardview_dark_background" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/descripcionBlog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical"
+            android:text="oeoeoe"
+            android:textColor="@color/cardview_shadow_start_color" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 </com.google.android.material.card.MaterialCardView>

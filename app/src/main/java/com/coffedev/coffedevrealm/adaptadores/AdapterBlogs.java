@@ -1,6 +1,5 @@
 package com.coffedev.coffedevrealm.adaptadores;
 
-import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,6 @@ import com.coffedev.coffedevrealm.R;
 import com.coffedev.coffedevrealm.adaptadores.interfaces.TouchHelperAdapter;
 import com.coffedev.coffedevrealm.dominio.entidades.Blog;
 import com.coffedev.coffedevrealm.viewHolders.ViewHolderBlog;
-
-import java.util.LinkedList;
 
 import javax.annotation.Nullable;
 
@@ -36,7 +33,6 @@ public class AdapterBlogs extends RealmRecyclerViewAdapter<Blog, ViewHolderBlog>
     @Override
     public void onBindViewHolder(@NonNull ViewHolderBlog holderBlog, int i) {
         final Blog blog = getItem(i);
-
         holderBlog.bind(blog);
         holderBlog.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

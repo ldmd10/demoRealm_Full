@@ -23,7 +23,8 @@
                 android:layout_height="wrap_content"
                 app:tabGravity="fill"
                 app:tabIndicatorGravity="bottom"
-                app:tabMode="auto" />
+                app:tabMode="auto"
+                />
 
 
             <androidx.viewpager.widget.ViewPager

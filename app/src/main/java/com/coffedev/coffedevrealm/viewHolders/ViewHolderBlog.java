@@ -26,6 +26,7 @@ public class ViewHolderBlog extends RecyclerView.ViewHolder {
 
     public void bind(Blog blog) {
         tituloBlog.setText(blog.getTitle());
+        //tituloBlog.setTextColor(Color.BLACK);
         descripcionBlog.setText(blog.getDescription());
     }
 
