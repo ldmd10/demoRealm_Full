@@ -48,18 +48,23 @@ public class CategoriasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         setTitle("CoffeDevNews");
         //categorias = RealmAdmin.CategoriaDao().getCategorias("");
+         categorias = RealmAdmin.CategoriaDao().getCategorias("");
+         actualizarViewPager();
 
-        //actualizarViewPager();
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
             }
 
             @Override
             public void onPageSelected(int position) {
-                ((BlogsFragment) agrupadorViewPager.get(position)).update();
+
+
+
 
             }
 
@@ -86,7 +91,7 @@ public class CategoriasActivity extends AppCompatActivity {
                     for (Categoria categoria : responseObtenerData) {
                         RealmAdmin.CategoriaDao().grabarCategoria(categoria);
                     }
-                    actualizarViewPager(responseObtenerData);
+                    actualizarViewPager();
 
                 }
 
@@ -109,7 +114,7 @@ public class CategoriasActivity extends AppCompatActivity {
      * Actualiza el ViewPager con los con los fragments que corresponda
      */
 
-    public void actualizarViewPager(List<Categoria> categorias) {
+    public void actualizarViewPager() {
 
         for (Categoria c : categorias) {
             BlogsFragment fragmentBlog = new BlogsFragment();

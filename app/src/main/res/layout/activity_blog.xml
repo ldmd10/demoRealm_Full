@@ -5,25 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".actividades.BlogActivity">
+
     <ImageView
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.3"
-        app:layout_constraintBottom_toTopOf="@+id/markdown_view">
+        app:layout_constraintBottom_toTopOf="@+id/markdown_view"
+        app:layout_constraintHeight_percent="0.3">
 
     </ImageView>
 
+    <!--Para leer md-->
     <br.tiagohm.markdownview.MarkdownView
         android:id="@+id/markdown_view"
-        app:escapeHtml="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:escapeHtml="false"
         app:layout_constraintTop_toBottomOf="@+id/header"
         tools:ignore="MissingConstraints" />
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

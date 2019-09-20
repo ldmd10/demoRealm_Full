@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Imagen extends RealmObject {
 
@@ -47,6 +48,7 @@ public class Imagen extends RealmObject {
     private int v;
     @SerializedName("id")
     @Expose
+    @PrimaryKey
     private String id;
 
     public String getName() {

@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 public class Blog extends RealmObject {
 
@@ -26,11 +27,11 @@ public class Blog extends RealmObject {
     @Expose
     private int v;
     @SerializedName("categoryblog")
-
     @Expose
     private String categoryblog;
     @SerializedName("id")
     @Expose
+    @PrimaryKey
     private String id;
     @SerializedName("image")
     @Expose

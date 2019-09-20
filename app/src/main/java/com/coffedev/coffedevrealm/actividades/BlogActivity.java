@@ -31,8 +31,12 @@ public class BlogActivity extends AppCompatActivity {
 
         blogid = getIntent().getStringExtra("idBlog");
         blog = RealmAdmin.BlogDao().getBlog(blogid);
-        bodynNew.loadMarkdown(blog.getContent());
-        Picasso.get().load(blog.getImageBlog().getUrl()).into(headerImage);
+
+        bodynNew.loadMarkdown(blog.getContent()); //mando el contenido en formato md
+
+        if (blog.getImageBlog().getUrl() != null) {
+            Picasso.get().load(blog.getImageBlog().getUrl()).into(headerImage);
+        }
 
 
         //setTitle("oeoe");

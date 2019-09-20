@@ -40,14 +40,14 @@ public class BlogsFragment extends Fragment implements ViewPager {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //Recibir argumentos
-
+        idCategoria=getArguments().getString("idCategoria");
         return inflater.inflate(R.layout.fragment_blogs, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        visorBlog = getActivity().findViewById(R.id.visor_blogs);
+        visorBlog = view.findViewById(R.id.visor_blogs);
         visorBlog.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         visorBlog.setLayoutManager(layoutManager);
@@ -60,7 +60,7 @@ public class BlogsFragment extends Fragment implements ViewPager {
      */
     public void update() {
         Log.d("oeoeoe", "update: abriendo " + categoria.getName());
-        blogsCategoria = RealmAdmin.BlogDao().getAllBlogsbyCategoria();
+        blogsCategoria = RealmAdmin.BlogDao().getBlogbyCategoria(idCategoria);
 
         AdapterBlogs adapterBlogs = new AdapterBlogs(blogsCategoria, new TouchHelperAdapter() {
             @Override

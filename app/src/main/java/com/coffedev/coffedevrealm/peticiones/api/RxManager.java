@@ -28,7 +28,6 @@ public class RxManager {
 
     public void obtenerCategoriqas(DisposableSingleObserver<ResponseCategorias> observer) {
 
-
         Disposable disposable_aux = restCliente.obtenereCategorias().subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).
                 subscribeWith(observer);
