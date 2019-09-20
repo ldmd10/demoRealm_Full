@@ -20,7 +20,6 @@ import com.coffedev.coffedevrealm.peticiones.api.response.ResponseCategorias;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.LinkedList;
-import java.util.List;
 
 import io.reactivex.observers.DisposableSingleObserver;
 import io.realm.RealmResults;
@@ -48,9 +47,8 @@ public class CategoriasActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         setTitle("CoffeDevNews");
         //categorias = RealmAdmin.CategoriaDao().getCategorias("");
-         categorias = RealmAdmin.CategoriaDao().getCategorias("");
-         actualizarViewPager();
-
+        categorias = RealmAdmin.CategoriaDao().getCategorias("");
+        actualizarViewPager();
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -62,8 +60,6 @@ public class CategoriasActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-
-
 
 
             }
@@ -115,7 +111,8 @@ public class CategoriasActivity extends AppCompatActivity {
      */
 
     public void actualizarViewPager() {
-
+        agrupadorViewPager.clear();
+        viewPager.setAdapter(adaptadorPager);
         for (Categoria c : categorias) {
             BlogsFragment fragmentBlog = new BlogsFragment();
             Bundle argComponente = new Bundle();

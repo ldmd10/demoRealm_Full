@@ -19,7 +19,7 @@ public class PeticionesUtil {
 
     public static APIService createClienteRX(String url) throws Exception {
 
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder(); // creo cliente http para peticiones
 
         httpClient.connectTimeout(10,TimeUnit.SECONDS);
         httpClient.readTimeout(120, TimeUnit.SECONDS);
